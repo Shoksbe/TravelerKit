@@ -19,4 +19,11 @@ class ConversionBrain {
     func addNumber(_ number: String) {
         unConvertedAmount += number
     }
+
+    /// Add comma to the unconverted amount
+    func addComma() {
+        if unConvertedAmount.range(of: ".") == nil {
+            unConvertedAmount += "."
+        }
+    }
 }

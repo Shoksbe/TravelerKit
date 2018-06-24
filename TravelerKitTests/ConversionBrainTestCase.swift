@@ -11,10 +11,23 @@ import XCTest
 
 class ConversionBrainTestCase: XCTestCase {
 
+    var conversionBrain: ConversionBrain!
+
+    override func setUp() {
+        conversionBrain = ConversionBrain()
+    }
+
     func testGiven5ToUnConvertedAmountWhenAccessingItThenIsValueEqual5() {
-        let conversionBrain = ConversionBrain()
         conversionBrain.addNumber("5")
 
         XCTAssertEqual(conversionBrain.unConvertedAmount, "5")
+    }
+
+    func testGiven8Comma1NumberToUnConvertedAmountWhenAccessingItTheIsValueEquel8Comma1() {
+        conversionBrain.addNumber("8")
+        conversionBrain.addComma()
+        conversionBrain.addNumber("1")
+
+        XCTAssertEqual(conversionBrain.unConvertedAmount, "8.1")
     }
 }
