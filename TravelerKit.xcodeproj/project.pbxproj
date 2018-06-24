@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
-		37850E5520DE24BD00BDA64A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ViewController.swift */; };
+		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
 		37850E5A20DE24C100BDA64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5920DE24C100BDA64A /* Assets.xcassets */; };
 		37850E5D20DE24C100BDA64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5B20DE24C100BDA64A /* LaunchScreen.storyboard */; };
 		37850E7920DE265E00BDA64A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37850E7820DE265E00BDA64A /* Default-568h@2x.png */; };
 		37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */; };
 		37850E7D20DFB9AB00BDA64A /* ConversionBrainTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */; };
+		37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7E20DFEA0F00BDA64A /* ConversionService.swift */; };
+		37850E8120DFF5D500BDA64A /* ConversionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8020DFF5D500BDA64A /* ConversionDecodable.swift */; };
+		37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8220DFF76400BDA64A /* ApiKeys.swift */; };
+		37850E8720DFF7E700BDA64A /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37850E8620DFF7E700BDA64A /* ApiKeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +34,7 @@
 /* Begin PBXFileReference section */
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37850E5420DE24BD00BDA64A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
 		37850E5720DE24BD00BDA64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37850E5920DE24C100BDA64A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37850E5C20DE24C100BDA64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		37850E7820DE265E00BDA64A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrain.swift; sourceTree = "<group>"; };
 		37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrainTestCase.swift; sourceTree = "<group>"; };
+		37850E7E20DFEA0F00BDA64A /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
+		37850E8020DFF5D500BDA64A /* ConversionDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionDecodable.swift; sourceTree = "<group>"; };
+		37850E8220DFF76400BDA64A /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		37850E8620DFF7E700BDA64A /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +110,12 @@
 		37850E7420DE25BC00BDA64A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				37850E8620DFF7E700BDA64A /* ApiKeys.plist */,
 				37850E5220DE24BD00BDA64A /* AppDelegate.swift */,
 				37850E5920DE24C100BDA64A /* Assets.xcassets */,
 				37850E5B20DE24C100BDA64A /* LaunchScreen.storyboard */,
 				37850E5E20DE24C100BDA64A /* Info.plist */,
+				37850E8220DFF76400BDA64A /* ApiKeys.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -113,7 +123,7 @@
 		37850E7520DE25CE00BDA64A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				37850E5420DE24BD00BDA64A /* ViewController.swift */,
+				37850E5420DE24BD00BDA64A /* ConvertController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */,
+				37850E7E20DFEA0F00BDA64A /* ConversionService.swift */,
+				37850E8020DFF5D500BDA64A /* ConversionDecodable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +233,7 @@
 				37850E7920DE265E00BDA64A /* Default-568h@2x.png in Resources */,
 				37850E5A20DE24C100BDA64A /* Assets.xcassets in Resources */,
 				37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */,
+				37850E8720DFF7E700BDA64A /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +258,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -255,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */,
-				37850E5520DE24BD00BDA64A /* ViewController.swift in Sources */,
+				37850E8120DFF5D500BDA64A /* ConversionDecodable.swift in Sources */,
+				37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */,
+				37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */,
+				37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
