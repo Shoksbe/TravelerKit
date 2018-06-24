@@ -12,8 +12,9 @@
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
 		37850E5A20DE24C100BDA64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5920DE24C100BDA64A /* Assets.xcassets */; };
 		37850E5D20DE24C100BDA64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5B20DE24C100BDA64A /* LaunchScreen.storyboard */; };
-		37850E6820DE24C100BDA64A /* TravelerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E6720DE24C100BDA64A /* TravelerKitTests.swift */; };
 		37850E7920DE265E00BDA64A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37850E7820DE265E00BDA64A /* Default-568h@2x.png */; };
+		37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */; };
+		37850E7D20DFB9AB00BDA64A /* ConversionBrainTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +36,10 @@
 		37850E5C20DE24C100BDA64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37850E5E20DE24C100BDA64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37850E6320DE24C100BDA64A /* TravelerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37850E6720DE24C100BDA64A /* TravelerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelerKitTests.swift; sourceTree = "<group>"; };
 		37850E6920DE24C100BDA64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37850E7820DE265E00BDA64A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrain.swift; sourceTree = "<group>"; };
+		37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrainTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,8 @@
 		37850E6620DE24C100BDA64A /* TravelerKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				37850E6720DE24C100BDA64A /* TravelerKitTests.swift */,
 				37850E6920DE24C100BDA64A /* Info.plist */,
+				37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */,
 			);
 			path = TravelerKitTests;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 		37850E7720DE25E400BDA64A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 					};
 					37850E6220DE24C100BDA64A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 37850E4E20DE24BD00BDA64A;
 					};
 				};
@@ -250,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */,
 				37850E5520DE24BD00BDA64A /* ViewController.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 			);
@@ -259,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37850E6820DE24C100BDA64A /* TravelerKitTests.swift in Sources */,
+				37850E7D20DFB9AB00BDA64A /* ConversionBrainTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +453,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8XBDV79J6;
 				INFOPLIST_FILE = TravelerKitTests/Info.plist;
@@ -458,6 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gregorydeknyf.TravelerKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelerKit.app/TravelerKit";
@@ -469,6 +476,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8XBDV79J6;
 				INFOPLIST_FILE = TravelerKitTests/Info.plist;
