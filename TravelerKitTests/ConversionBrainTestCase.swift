@@ -30,4 +30,14 @@ class ConversionBrainTestCase: XCTestCase {
 
         XCTAssertEqual(conversionBrain.unConvertedAmount, "8.1")
     }
+
+    func testGivenNoEmptyUnconvertedAmountWhenResetToZeroThenUnconvertedAmoundIsEmpty() {
+        conversionBrain.addNumber("8")
+        conversionBrain.addComma()
+        conversionBrain.addNumber("1")
+
+        conversionBrain.resetToZero()
+
+        XCTAssertTrue(conversionBrain.unConvertedAmount.isEmpty)
+    }
 }

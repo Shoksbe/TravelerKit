@@ -26,4 +26,9 @@ class ConversionBrain {
             unConvertedAmount += "."
         }
     }
+
+    /// Clears the unConvertedAmount string.
+    func resetToZero() {
+        unConvertedAmount = ""
+    }
 }
