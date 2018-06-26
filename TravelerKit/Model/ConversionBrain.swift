@@ -13,6 +13,10 @@ class ConversionBrain {
      it is equal to the amount displayed in the textField of the original currency.*/
     var unConvertedAmount: String = ""
 
+
+    /// Currencies and their exchange rate
+    private var currencyRates: [String: Double]?
+
     /// Add a number to the unConvertedAmount string
     ///
     /// - Parameter number: The *String* number to add
@@ -30,5 +34,16 @@ class ConversionBrain {
     /// Clears the unConvertedAmount string.
     func resetToZero() {
         unConvertedAmount = ""
+    }
+
+
+    func getCurrencyRates() {
+        ConversionService.shared.getCurrencyRates { (success, request) in
+
+            //If the service call has worked and the API has returned the rates
+            if success, let rates = request?.rates {
+                self.currencyRates = rates
+            }
+        }
     }
 }
