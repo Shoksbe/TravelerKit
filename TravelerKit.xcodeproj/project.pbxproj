@@ -22,6 +22,8 @@
 		37850E8C20E00B0400BDA64A /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8820E00B0300BDA64A /* URLSessionFake.swift */; };
 		37850E8E20E00B0400BDA64A /* CurrencyRate.json in Resources */ = {isa = PBXBuildFile; fileRef = 37850E8A20E00B0300BDA64A /* CurrencyRate.json */; };
 		37850E8F20E00B0400BDA64A /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8B20E00B0400BDA64A /* FakeResponseData.swift */; };
+		37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */; };
+		37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9220E35EE10028839C /* ExtensionDouble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		37850E8820E00B0300BDA64A /* URLSessionFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		37850E8A20E00B0300BDA64A /* CurrencyRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencyRate.json; sourceTree = "<group>"; };
 		37850E8B20E00B0400BDA64A /* FakeResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotificationCenter.swift; sourceTree = "<group>"; };
+		37CA2F9220E35EE10028839C /* ExtensionDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDouble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 				37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */,
 				37850E7E20DFEA0F00BDA64A /* ConversionService.swift */,
 				37850E8020DFF5D500BDA64A /* ConversionDecodable.swift */,
+				37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */,
+				37CA2F9220E35EE10028839C /* ExtensionDouble.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */,
 				37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */,
 				37850E8120DFF5D500BDA64A /* ConversionDecodable.swift in Sources */,
 				37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */,
 				37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */,
 				37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
+				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

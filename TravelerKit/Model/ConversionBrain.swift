@@ -18,6 +18,9 @@ class ConversionBrain {
     /// Currencies and their exchange rate
     private var currencyRates: [String: Double]?
 
+    ///The target currency used to convert, by default its USD
+    private var targetCurrency = "USD"
+
     /*
     Manual storage of all possible error codes because the API
      does not provide a description of the error each time.
@@ -77,13 +80,38 @@ class ConversionBrain {
                 }
 
                 //Check if there is a description of the error with the error code of the API
-                guard let errorDescription = self.errorCodeDescription [error.code] else {
+                guard let errorFromApiDescription = self.errorCodeDescription [error.code] else {
                     self.error = "Unknow error"
                     return
                 }
 
-                self.error = errorDescription
+                self.error = errorFromApiDescription
             }
         }
+    }
+
+    // -MARK: Methodes
+    /// Convert an amount from the source currency to the target currency
+    ///
+    /// - Parameter amount: The amount to convert
+    /// - Returns: The converted amount in the new currency
+    private func convertToTargetCurrency(_ amount: String)-> String {
+
+        guard let amountToConvert: Double = Double(amount) else {
+            self.error = "Unable to convert amount to a Double."
+            return ""
+        }
+
+        guard let rate: Double = currencyRates?[targetCurrency] else {
+            self.error = "Rate unavailable, please choose another one or reload the page."
+            return ""
+        }
+
+        //The conversion is done only if the rate exists
+        var currencyConvert: Double = 0.0
+        currencyConvert = amountToConvert * rate
+        currencyConvert = currencyConvert.rounded(toPlaces: 2)
+
+        return String(currencyConvert)
     }
 }
