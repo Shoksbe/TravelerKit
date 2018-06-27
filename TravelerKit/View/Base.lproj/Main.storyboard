@@ -32,7 +32,7 @@
         <!--Convert-->
         <scene sceneID="CYu-lS-aN9">
             <objects>
-                <viewController id="d7u-E6-nTT" sceneMemberID="viewController">
+                <viewController id="d7u-E6-nTT" customClass="ConvertController" customModule="TravelerKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdu-6u-NzT" userLabel="Contener">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,9 @@
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="Xqf-VD-5T5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrE-Au-Xta">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="87"/>
@@ -161,6 +164,9 @@
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="Bpp-fE-Qyp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eA-bc-EVA">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="87"/>
@@ -169,6 +175,9 @@
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="ArM-3v-ZUm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -182,6 +191,9 @@
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="r3O-C5-qgA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2r9-CU-AzG">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="87"/>
@@ -190,6 +202,9 @@
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="y45-e0-bAe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnu-g6-2WF">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="87"/>
@@ -198,6 +213,9 @@
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="Bk7-v6-RK5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -211,6 +229,9 @@
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="FsU-iY-HbJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQB-rA-O9s">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="87"/>
@@ -219,6 +240,9 @@
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="4eh-JC-BJs"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MN-XM-hTQ">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="87"/>
@@ -227,6 +251,9 @@
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="JMO-33-vGD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -240,6 +267,9 @@
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="hXv-Wb-aJB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgN-46-e8U">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="87"/>
@@ -248,6 +278,9 @@
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="Q8B-Hc-fpV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBO-0U-zCC">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="87"/>
@@ -256,6 +289,9 @@
                                                 <state key="normal" title="del">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressedKeyboardButton:" destination="d7u-E6-nTT" eventType="touchUpInside" id="bVF-NQ-GMt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -284,6 +320,9 @@
                     <tabBarItem key="tabBarItem" title="Convert" image="Euros" selectedImage="Euros" id="X09-c4-J8j">
                         <color key="badgeColor" red="0.99215686270000003" green="0.99607843139999996" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="unConvertedAmountTextField" destination="1BD-GI-jPV" id="EM7-7Y-S5I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5c-S1-Y2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
