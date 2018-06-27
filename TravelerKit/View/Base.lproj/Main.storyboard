@@ -321,6 +321,7 @@
                         <color key="badgeColor" red="0.99215686270000003" green="0.99607843139999996" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="convertedAmountTextField" destination="BUp-lz-hfz" id="1Ff-lk-VDp"/>
                         <outlet property="unConvertedAmountTextField" destination="1BD-GI-jPV" id="EM7-7Y-S5I"/>
                     </connections>
                 </viewController>

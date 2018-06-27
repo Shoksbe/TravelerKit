@@ -13,7 +13,16 @@ class ConversionBrain {
      it is equal to the amount displayed in the textField of the original currency.*/
     var unConvertedAmount: String = ""
 
-    private var error: String?
+    var convertedAmount: String {
+        return convertToTargetCurrency(unConvertedAmount)
+    }
+
+    private var error: String? {
+        didSet {
+            //Make alert on controller
+            NotificationCenter.default.post(name: .errorCurrency, object: nil)
+        }
+    }
 
     /// Currencies and their exchange rate
     private var currencyRates: [String: Double]?
@@ -45,6 +54,10 @@ class ConversionBrain {
          505:"The specified timeframe is too long, exceeding 365 days."
     ]
 
+    init() {
+        getCurrencyRates()
+    }
+
     /// Add a number to the unConvertedAmount string
     ///
     /// - Parameter number: The *String* number to add
@@ -65,12 +78,13 @@ class ConversionBrain {
     }
 
 
-    func getCurrencyRates() {
+    private func getCurrencyRates() {
         ConversionService.shared.getCurrencyRates { (success, request) in
 
             //If the service call has worked and the API has returned the rates
             if success, let rates = request?.rates {
                 self.currencyRates = rates
+                NotificationCenter.default.post(name: .currencyLoaded, object: nil)
             } else {
 
                 //Check if there is an error in the API request
@@ -97,18 +111,16 @@ class ConversionBrain {
     /// - Returns: The converted amount in the new currency
     private func convertToTargetCurrency(_ amount: String)-> String {
 
-        guard let amountToConvert: Double = Double(amount) else {
-            self.error = "Unable to convert amount to a Double."
+        guard let rate: Double = currencyRates?[targetCurrency] else {
+            self.error = "Rate unavailable, please check your connection or reload the page."
             return ""
         }
 
-        guard let rate: Double = currencyRates?[targetCurrency] else {
-            self.error = "Rate unavailable, please choose another one or reload the page."
-            return ""
-        }
+        guard let amountToConvert: Double = Double(amount) else { return "" }
 
         //The conversion is done only if the rate exists
         var currencyConvert: Double = 0.0
+
         currencyConvert = amountToConvert * rate
         currencyConvert = currencyConvert.rounded(toPlaces: 2)
 

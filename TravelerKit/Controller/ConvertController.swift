@@ -14,6 +14,8 @@ class ConvertController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var unConvertedAmountTextField: UITextField!
+    @IBOutlet weak var convertedAmountTextField: UITextField!
+
 }
 
 // MARK: - Methods
@@ -27,6 +29,9 @@ extension ConvertController {
     private func updateDisplays() {
         //Unconverted display
         unConvertedAmountTextField.text = conversionBrain.unConvertedAmount
+
+        //Converted display
+        convertedAmountTextField.text = conversionBrain.convertedAmount
     }
 }
 
