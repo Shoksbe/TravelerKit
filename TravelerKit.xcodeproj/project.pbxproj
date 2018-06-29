@@ -24,6 +24,7 @@
 		37850E8F20E00B0400BDA64A /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8B20E00B0400BDA64A /* FakeResponseData.swift */; };
 		37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */; };
 		37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9220E35EE10028839C /* ExtensionDouble.swift */; };
+		37CA2F9520E671B60028839C /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9420E671B50028839C /* RateCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		37850E8B20E00B0400BDA64A /* FakeResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotificationCenter.swift; sourceTree = "<group>"; };
 		37CA2F9220E35EE10028839C /* ExtensionDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDouble.swift; sourceTree = "<group>"; };
+		37CA2F9420E671B50028839C /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				37850E7720DE25E400BDA64A /* Model */,
-				37850E7420DE25BC00BDA64A /* SupportingFiles */,
-				37850E7520DE25CE00BDA64A /* Controller */,
 				37850E7620DE25D800BDA64A /* View */,
+				37850E7520DE25CE00BDA64A /* Controller */,
+				37850E7420DE25BC00BDA64A /* SupportingFiles */,
 			);
 			path = TravelerKit;
 			sourceTree = "<group>";
@@ -136,7 +138,7 @@
 		37850E7520DE25CE00BDA64A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				37850E5420DE24BD00BDA64A /* ConvertController.swift */,
+				37CA2F9720E6D1190028839C /* Converter */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +146,7 @@
 		37850E7620DE25D800BDA64A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37CA2F9820E6D1260028839C /* Converter */,
 				37850E5620DE24BD00BDA64A /* Main.storyboard */,
 			);
 			path = View;
@@ -152,13 +155,45 @@
 		37850E7720DE25E400BDA64A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37CA2F9620E6D0E00028839C /* Converter */,
+				37CA2F9920E6D1500028839C /* Extension */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37CA2F9620E6D0E00028839C /* Converter */ = {
+			isa = PBXGroup;
+			children = (
 				37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */,
 				37850E7E20DFEA0F00BDA64A /* ConversionService.swift */,
 				37850E8020DFF5D500BDA64A /* ConversionDecodable.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		37CA2F9720E6D1190028839C /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				37850E5420DE24BD00BDA64A /* ConvertController.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		37CA2F9820E6D1260028839C /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				37CA2F9420E671B50028839C /* RateCollectionViewCell.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		37CA2F9920E6D1500028839C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */,
 				37CA2F9220E35EE10028839C /* ExtensionDouble.swift */,
 			);
-			path = Model;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +325,7 @@
 				37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */,
 				37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */,
 				37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */,
+				37CA2F9520E671B60028839C /* RateCollectionViewCell.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
 			);

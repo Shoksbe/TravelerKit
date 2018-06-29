@@ -17,10 +17,17 @@ class ConversionBrain {
         return convertToTargetCurrency(unConvertedAmount)
     }
 
+    ///the name of each available currency
+    var ratesName = [String]() {
+        didSet {
+            NotificationCenter.default.post(name: .currencyLoaded, object: nil)
+        }
+    }
+
     private var error: String? {
         didSet {
             //Make alert on controller
-            NotificationCenter.default.post(name: .errorCurrency, object: nil)
+            NotificationCenter.default.post(name: .errorCurrency, object: nil, userInfo: ["error":error!])
         }
     }
 
@@ -77,6 +84,12 @@ class ConversionBrain {
         unConvertedAmount = ""
     }
 
+    /// Change the currency used for the conversion
+    ///
+    /// - Parameter newCurrency: The new currency to use
+    func changeTargetCurrency(to newCurrency: String) {
+        self.targetCurrency = newCurrency
+    }
 
     private func getCurrencyRates() {
         ConversionService.shared.getCurrencyRates { (success, request) in
@@ -84,7 +97,7 @@ class ConversionBrain {
             //If the service call has worked and the API has returned the rates
             if success, let rates = request?.rates {
                 self.currencyRates = rates
-                NotificationCenter.default.post(name: .currencyLoaded, object: nil)
+                self.ratesName = Array(rates.keys)
             } else {
 
                 //Check if there is an error in the API request
