@@ -347,7 +347,7 @@
         <!--Translate-->
         <scene sceneID="0Wy-8W-NeS">
             <objects>
-                <viewController id="lc4-F6-SHx" sceneMemberID="viewController">
+                <viewController id="lc4-F6-SHx" customClass="TranslateViewController" customModule="TravelerKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNZ-iX-MEi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,7 +412,7 @@
                                                 <rect key="frame" x="0.0" y="20.5" width="355" height="124.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99278479809999998" green="0.9959403872" blue="0.99582940340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -490,6 +490,11 @@
                         <viewLayoutGuide key="safeArea" id="Ck7-Bw-ezg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Translate" image="World" id="Jbu-5F-Q8D"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SDZ-YG-0CK" id="hg8-r9-FIf"/>
+                        <outlet property="toBeTranslatedTextView" destination="Vdb-Ag-E6o" id="aQf-v1-2va"/>
+                        <outlet property="translatedTextView" destination="pXA-hY-3lE" id="ZoY-gd-heK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6t-P7-c6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
