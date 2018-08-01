@@ -11,6 +11,8 @@ import UIKit
 // -MARK: Properties
 class TranslateViewController: UIViewController {
     
+    var myTranslating: TranslateBrain!
+    
     @IBOutlet weak var toBeTranslatedTextView: UITextView!
     @IBOutlet weak var translatedTextView: UITextView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -23,6 +25,8 @@ extension TranslateViewController {
         //Observe notification
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorTranslate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textTranslated(_:)), name: .textTranslated, object: nil)
+        
+        myTranslating = TranslateBrain()
     }
     
     //When text is translated, this function is called by the NotificationObserver
@@ -34,6 +38,13 @@ extension TranslateViewController {
         
         //Adding translated text to the translation view
         translatedTextView.text = translateText
+    }
+    
+    func getTranslation() {
+        //Show activity indicator
+        activityIndicator.isHidden = false
+        //Translation of user entered text
+        myTranslating.translate(toBeTranslatedTextView.text)
     }
     
     ///Displays errors
