@@ -17,6 +17,13 @@ class FakeResponseData {
         let url = bundle.url(forResource: "CurrencyRate", withExtension: "json")!
         return try! Data(contentsOf: url)
     }
+    
+    //Translate data
+    static var translateCorrectDate: Data? {
+        let bundle = Bundle(for: FakeResponseData.self)
+        let url = bundle.url(forResource: "Translate", withExtension: "json")!
+        return try! Data(contentsOf: url)
+    }
 
     static let incorrectData = "erreur".data(using: .utf8)!
 

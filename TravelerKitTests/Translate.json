@@ -1,0 +1,11 @@
+{
+    "data": {
+        "translations":
+            [
+                {
+                    "translatedText": "I translate with the Google API",
+                    "detectedSourceLanguage": "fr"
+                 }
+            ]
+    }
+}
