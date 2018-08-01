@@ -11,4 +11,7 @@ import Foundation
 extension Notification.Name {
     static let errorCurrency = Notification.Name("ErrorCurrency")
     static let currencyLoaded = Notification.Name("CurrencyLoaded")
+    
+    static let errorTranslate = Notification.Name("ErrorTranslate")
+    static let TextTranslated = Notification.Name("TextTranslated")
 }

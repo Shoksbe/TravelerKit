@@ -12,8 +12,16 @@ class TranslateBrain {
     
     // MARK: - Properties
     
-    var translateText: String?
-    var error: String?
+    var translateText: String? {
+        didSet {
+            NotificationCenter.default.post(name: .TextTranslated, object: nil)
+        }
+    }
+    var error: String? {
+        didSet {
+            NotificationCenter.default.post(name: .errorTranslate, object: nil)
+        }
+    }
     
     
     // MARK: - Methods
