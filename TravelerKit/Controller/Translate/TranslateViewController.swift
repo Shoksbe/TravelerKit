@@ -26,7 +26,17 @@ extension TranslateViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorTranslate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(textTranslated(_:)), name: .textTranslated, object: nil)
         
+        //Gesture to remove keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         myTranslating = TranslateBrain()
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+        getTranslation()
     }
     
     //When text is translated, this function is called by the NotificationObserver
@@ -56,4 +66,18 @@ extension TranslateViewController {
         self.present(alert, animated: true)
     }
     
+}
+
+// -MARK: Textview
+extension TranslateViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        //When return button did tap
+        if(text == "\n") {
+            //Remove keyboard
+            textView.resignFirstResponder()
+            getTranslation()
+            return false
+        }
+        return true
+    }
 }
