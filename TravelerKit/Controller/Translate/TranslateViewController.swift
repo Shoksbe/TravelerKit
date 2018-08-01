@@ -22,6 +22,18 @@ extension TranslateViewController {
     override func viewDidLoad() {
         //Observe notification
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorTranslate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textTranslated(_:)), name: .textTranslated, object: nil)
+    }
+    
+    //When text is translated, this function is called by the NotificationObserver
+    @objc func textTranslated(_ notification: Notification) {
+        guard let translateText = notification.userInfo?["text"] as? String else { return }
+        
+        //Hide the activity indicator
+        activityIndicator.isHidden = true
+        
+        //Adding translated text to the translation view
+        translatedTextView.text = translateText
     }
     
     ///Displays errors

@@ -13,5 +13,5 @@ extension Notification.Name {
     static let currencyLoaded = Notification.Name("CurrencyLoaded")
     
     static let errorTranslate = Notification.Name("ErrorTranslate")
-    static let TextTranslated = Notification.Name("TextTranslated")
+    static let textTranslated = Notification.Name("TextTranslated")
 }

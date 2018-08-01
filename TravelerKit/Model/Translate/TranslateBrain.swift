@@ -14,12 +14,12 @@ class TranslateBrain {
     
     var translateText: String? {
         didSet {
-            NotificationCenter.default.post(name: .TextTranslated, object: nil)
+            NotificationCenter.default.post(name: .textTranslated, object: nil, userInfo: ["text": translateText!])
         }
     }
     var error: String? {
         didSet {
-            NotificationCenter.default.post(name: .errorTranslate, object: nil)
+            NotificationCenter.default.post(name: .errorTranslate, object: nil, userInfo: ["error": error!])
         }
     }
     
