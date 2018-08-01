@@ -11,6 +11,7 @@
 		3711E2B421118E5C009B3246 /* TranslationDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B321118E5C009B3246 /* TranslationDecodable.swift */; };
 		3711E2B6211193DA009B3246 /* Translate.json in Resources */ = {isa = PBXBuildFile; fileRef = 3711E2B5211193DA009B3246 /* Translate.json */; };
 		3711E2B821119501009B3246 /* TranslateTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B721119501009B3246 /* TranslateTestCase.swift */; };
+		3711E2BA211196BC009B3246 /* TranslateBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B9211196BC009B3246 /* TranslateBrain.swift */; };
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
 		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		3711E2B321118E5C009B3246 /* TranslationDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationDecodable.swift; sourceTree = "<group>"; };
 		3711E2B5211193DA009B3246 /* Translate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate.json; sourceTree = "<group>"; };
 		3711E2B721119501009B3246 /* TranslateTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTestCase.swift; sourceTree = "<group>"; };
+		3711E2B9211196BC009B3246 /* TranslateBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateBrain.swift; sourceTree = "<group>"; };
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				3711E2B121118DF6009B3246 /* TranslateService.swift */,
 				3711E2B321118E5C009B3246 /* TranslationDecodable.swift */,
+				3711E2B9211196BC009B3246 /* TranslateBrain.swift */,
 			);
 			path = Translate;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				3711E2B221118DF6009B3246 /* TranslateService.swift in Sources */,
 				37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */,
 				37DDA9AA2101D54900E81413 /* TranslateViewController.swift in Sources */,
+				3711E2BA211196BC009B3246 /* TranslateBrain.swift in Sources */,
 				37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */,
 				37850E8120DFF5D500BDA64A /* ConversionDecodable.swift in Sources */,
 				37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */,
