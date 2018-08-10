@@ -12,6 +12,7 @@
 		3711E2B6211193DA009B3246 /* Translate.json in Resources */ = {isa = PBXBuildFile; fileRef = 3711E2B5211193DA009B3246 /* Translate.json */; };
 		3711E2B821119501009B3246 /* TranslateTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B721119501009B3246 /* TranslateTestCase.swift */; };
 		3711E2BA211196BC009B3246 /* TranslateBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B9211196BC009B3246 /* TranslateBrain.swift */; };
+		37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DAC211E051300974905 /* WeatherDecodable.swift */; };
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
 		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		3711E2B5211193DA009B3246 /* Translate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate.json; sourceTree = "<group>"; };
 		3711E2B721119501009B3246 /* TranslateTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTestCase.swift; sourceTree = "<group>"; };
 		3711E2B9211196BC009B3246 /* TranslateBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateBrain.swift; sourceTree = "<group>"; };
+		37596DAC211E051300974905 /* WeatherDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDecodable.swift; sourceTree = "<group>"; };
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 				3711E2B321118E5C009B3246 /* TranslationDecodable.swift */,
 			);
 			path = Translate;
+			sourceTree = "<group>";
+		};
+		37596DAB211E04E300974905 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				37596DAC211E051300974905 /* WeatherDecodable.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		37850E4620DE24BC00BDA64A = {
@@ -180,6 +190,7 @@
 		37850E7720DE25E400BDA64A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37596DAB211E04E300974905 /* Weather */,
 				3711E2B021118DCE009B3246 /* Translate */,
 				37CA2F9620E6D0E00028839C /* Converter */,
 				37CA2F9920E6D1500028839C /* Extension */,
@@ -366,6 +377,7 @@
 				37CA2F9520E671B60028839C /* RateCollectionViewCell.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
+				37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */,
 				3711E2B421118E5C009B3246 /* TranslationDecodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
