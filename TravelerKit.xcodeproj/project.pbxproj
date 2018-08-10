@@ -95,9 +95,9 @@
 		3711E2B021118DCE009B3246 /* Translate */ = {
 			isa = PBXGroup;
 			children = (
+				3711E2B9211196BC009B3246 /* TranslateBrain.swift */,
 				3711E2B121118DF6009B3246 /* TranslateService.swift */,
 				3711E2B321118E5C009B3246 /* TranslationDecodable.swift */,
-				3711E2B9211196BC009B3246 /* TranslateBrain.swift */,
 			);
 			path = Translate;
 			sourceTree = "<group>";
