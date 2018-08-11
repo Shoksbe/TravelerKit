@@ -16,6 +16,7 @@
 		37596DAF211EBD3400974905 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DAE211EBD3400974905 /* WeatherService.swift */; };
 		37596DB1211EBD8600974905 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB0211EBD8600974905 /* WeatherInfo.swift */; };
 		37596DB3211EBDC100974905 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB2211EBDC100974905 /* Citys.swift */; };
+		37596DB6211EC10B00974905 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB5211EC10B00974905 /* WeatherViewController.swift */; };
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
 		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		37596DAE211EBD3400974905 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		37596DB0211EBD8600974905 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		37596DB2211EBDC100974905 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
+		37596DB5211EC10B00974905 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		37596DB4211EC0E100974905 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				37596DB5211EC10B00974905 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		37850E4620DE24BC00BDA64A = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 		37850E7520DE25CE00BDA64A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37596DB4211EC0E100974905 /* Weather */,
 				37DDA9A62101D4E100E81413 /* Translate */,
 				37CA2F9720E6D1190028839C /* Converter */,
 			);
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3711E2B221118DF6009B3246 /* TranslateService.swift in Sources */,
+				37596DB6211EC10B00974905 /* WeatherViewController.swift in Sources */,
 				37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */,
 				37DDA9AA2101D54900E81413 /* TranslateViewController.swift in Sources */,
 				3711E2BA211196BC009B3246 /* TranslateBrain.swift in Sources */,
