@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    var weather: WeatherBrain!
+
     //LocalWeatherView
     @IBOutlet weak var localCityName: UILabel!
     @IBOutlet weak var localWeatherDescription: UILabel!
@@ -33,9 +35,31 @@ class WeatherViewController: UIViewController {
 // MARK: - Methodes
 extension WeatherViewController {
     override func viewDidLoad() {
+        weather = WeatherBrain()
 
         //Observe notification
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorWeather, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setWeatherView), name: .weatherLoaded, object: nil)
+    }
+
+    @objc private func setWeatherView() {
+        //LocalWeatherView
+        guard let localWeather = weather.local else { return }
+        localCityName.text = localWeather.city
+        localWeatherDescription.text = localWeather.text
+        localTemp.text = localWeather.temp + "°"
+        localWeatherIcon.image = localWeather.icon
+        localHighTemp.text = localWeather.high + "°"
+        localLowTemp.text = localWeather.low + "°"
+
+        //DestionWeather
+        guard let destinationWeather = weather.destination else { return }
+        destinationCityName.text = destinationWeather.city
+        destinationWeatherDescription.text = destinationWeather.text
+        destinationTemp.text = destinationWeather.temp + "°"
+        destinationWeatherIcon.image = destinationWeather.icon
+        destinationHighTemp.text = destinationWeather.high + "°"
+        destinationLowTemp.text = destinationWeather.low + "°"
     }
 
     ///Displays errors
