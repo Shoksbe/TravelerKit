@@ -29,3 +29,21 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var destinationLowTemp: UILabel!
 
 }
+
+// MARK: - Methodes
+extension WeatherViewController {
+    override func viewDidLoad() {
+
+        //Observe notification
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorWeather, object: nil)
+    }
+
+    ///Displays errors
+    @objc private func showAlertError(_ notification: Notification) {
+        guard let message = notification.userInfo?["error"] as? String else { return }
+
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+}
