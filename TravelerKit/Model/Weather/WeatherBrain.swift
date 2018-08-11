@@ -21,6 +21,11 @@ class WeatherBrain {
         }
     }
 
+    // MARK: - Initialiser
+    init() {
+        getWeatherFromApi()
+    }
+
     // MARK: - Methods
     private func getWeatherFromApi() {
 
