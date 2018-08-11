@@ -13,6 +13,9 @@
 		3711E2B821119501009B3246 /* TranslateTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B721119501009B3246 /* TranslateTestCase.swift */; };
 		3711E2BA211196BC009B3246 /* TranslateBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711E2B9211196BC009B3246 /* TranslateBrain.swift */; };
 		37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DAC211E051300974905 /* WeatherDecodable.swift */; };
+		37596DAF211EBD3400974905 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DAE211EBD3400974905 /* WeatherService.swift */; };
+		37596DB1211EBD8600974905 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB0211EBD8600974905 /* WeatherInfo.swift */; };
+		37596DB3211EBDC100974905 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB2211EBDC100974905 /* Citys.swift */; };
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
 		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 		3711E2B721119501009B3246 /* TranslateTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTestCase.swift; sourceTree = "<group>"; };
 		3711E2B9211196BC009B3246 /* TranslateBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateBrain.swift; sourceTree = "<group>"; };
 		37596DAC211E051300974905 /* WeatherDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDecodable.swift; sourceTree = "<group>"; };
+		37596DAE211EBD3400974905 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		37596DB0211EBD8600974905 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		37596DB2211EBDC100974905 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				37596DAC211E051300974905 /* WeatherDecodable.swift */,
+				37596DAE211EBD3400974905 /* WeatherService.swift */,
+				37596DB2211EBDC100974905 /* Citys.swift */,
+				37596DB0211EBD8600974905 /* WeatherInfo.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -373,8 +382,11 @@
 				37850E8120DFF5D500BDA64A /* ConversionDecodable.swift in Sources */,
 				37850E8320DFF76400BDA64A /* ApiKeys.swift in Sources */,
 				37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */,
+				37596DB1211EBD8600974905 /* WeatherInfo.swift in Sources */,
 				37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */,
 				37CA2F9520E671B60028839C /* RateCollectionViewCell.swift in Sources */,
+				37596DAF211EBD3400974905 /* WeatherService.swift in Sources */,
+				37596DB3211EBDC100974905 /* Citys.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
 				37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */,
