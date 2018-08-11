@@ -17,6 +17,7 @@
 		37596DB1211EBD8600974905 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB0211EBD8600974905 /* WeatherInfo.swift */; };
 		37596DB3211EBDC100974905 /* Citys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB2211EBDC100974905 /* Citys.swift */; };
 		37596DB6211EC10B00974905 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB5211EC10B00974905 /* WeatherViewController.swift */; };
+		37596DB8211EC2BF00974905 /* WeatherBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37596DB7211EC2BF00974905 /* WeatherBrain.swift */; };
 		37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5220DE24BD00BDA64A /* AppDelegate.swift */; };
 		37850E5520DE24BD00BDA64A /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E5420DE24BD00BDA64A /* ConvertController.swift */; };
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		37596DB0211EBD8600974905 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		37596DB2211EBDC100974905 /* Citys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citys.swift; sourceTree = "<group>"; };
 		37596DB5211EC10B00974905 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		37596DB7211EC2BF00974905 /* WeatherBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBrain.swift; sourceTree = "<group>"; };
 		37850E4F20DE24BD00BDA64A /* TravelerKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E5220DE24BD00BDA64A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37850E5420DE24BD00BDA64A /* ConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				37596DAE211EBD3400974905 /* WeatherService.swift */,
 				37596DB2211EBDC100974905 /* Citys.swift */,
 				37596DB0211EBD8600974905 /* WeatherInfo.swift */,
+				37596DB7211EC2BF00974905 /* WeatherBrain.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				37596DAF211EBD3400974905 /* WeatherService.swift in Sources */,
 				37596DB3211EBDC100974905 /* Citys.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
+				37596DB8211EC2BF00974905 /* WeatherBrain.swift in Sources */,
 				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
 				37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */,
 				3711E2B421118E5C009B3246 /* TranslationDecodable.swift in Sources */,

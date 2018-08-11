@@ -14,4 +14,7 @@ extension Notification.Name {
     
     static let errorTranslate = Notification.Name("ErrorTranslate")
     static let textTranslated = Notification.Name("TextTranslated")
+
+    static let errorWeather = Notification.Name("ErrorWeather")
+    static let weatherLoaded = Notification.Name("WeatherLoaded")
 }
