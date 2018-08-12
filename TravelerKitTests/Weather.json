@@ -1,0 +1,150 @@
+
+{
+    "query": {
+        "count": 1,
+        "created": "2018-06-19T07:24:33Z",
+        "lang": "en-US",
+        "results": {
+            "channel": {
+                "units": {
+                    "distance": "km",
+                    "pressure": "mb",
+                    "speed": "km/h",
+                    "temperature": "C"
+                },
+                "title": "Yahoo! Weather - Brussels, Capital Region of Brussels, BE",
+                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-968019/",
+                "description": "Yahoo! Weather for Brussels, Capital Region of Brussels, BE",
+                "language": "en-us",
+                "lastBuildDate": "Tue, 19 Jun 2018 09:24 AM CEST",
+                "ttl": "60",
+                "location": {
+                    "city": "Brussels",
+                    "country": "Belgium",
+                    "region": " Capital Region of Brussels"
+                },
+                "wind": {
+                    "chill": "61",
+                    "direction": "230",
+                    "speed": "22.53"
+                },
+                "atmosphere": {
+                    "humidity": "84",
+                    "pressure": "34405.72",
+                    "rising": "0",
+                    "visibility": "25.91"
+                },
+                "astronomy": {
+                    "sunrise": "5:28 am",
+                    "sunset": "10:0 pm"
+                },
+                "image": {
+                    "title": "Yahoo! Weather",
+                    "width": "142",
+                    "height": "18",
+                    "link": "http://weather.yahoo.com",
+                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+                },
+                "item": {
+                    "title": "Conditions for Brussels, Capital Region of Brussels, BE at 08:00 AM CEST",
+                    "lat": "50.848381",
+                    "long": "4.34968",
+                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-968019/",
+                    "pubDate": "Tue, 19 Jun 2018 08:00 AM CEST",
+                    "condition": {
+                        "code": "26",
+                        "date": "Tue, 19 Jun 2018 08:00 AM CEST",
+                        "temp": "16",
+                        "text": "Cloudy"
+                    },
+                    "forecast": [
+                                 {
+                                 "code": "28",
+                                 "date": "19 Jun 2018",
+                                 "day": "Tue",
+                                 "high": "20",
+                                 "low": "14",
+                                 "text": "Mostly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "20 Jun 2018",
+                                 "day": "Wed",
+                                 "high": "23",
+                                 "low": "15",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "21 Jun 2018",
+                                 "day": "Thu",
+                                 "high": "17",
+                                 "low": "11",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "22 Jun 2018",
+                                 "day": "Fri",
+                                 "high": "15",
+                                 "low": "8",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "23 Jun 2018",
+                                 "day": "Sat",
+                                 "high": "17",
+                                 "low": "7",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "28",
+                                 "date": "24 Jun 2018",
+                                 "day": "Sun",
+                                 "high": "20",
+                                 "low": "9",
+                                 "text": "Mostly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "25 Jun 2018",
+                                 "day": "Mon",
+                                 "high": "23",
+                                 "low": "12",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "26 Jun 2018",
+                                 "day": "Tue",
+                                 "high": "23",
+                                 "low": "13",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "27 Jun 2018",
+                                 "day": "Wed",
+                                 "high": "25",
+                                 "low": "16",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "28 Jun 2018",
+                                 "day": "Thu",
+                                 "high": "26",
+                                 "low": "16",
+                                 "text": "Partly Cloudy"
+                                 }
+                                 ],
+                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/26.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Tue - Mostly Cloudy. High: 20Low: 14\n<BR /> Wed - Partly Cloudy. High: 23Low: 15\n<BR /> Thu - Partly Cloudy. High: 17Low: 11\n<BR /> Fri - Partly Cloudy. High: 15Low: 8\n<BR /> Sat - Partly Cloudy. High: 17Low: 7\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-968019/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n<BR />\n]]>",
+                    "guid": {
+                        "isPermaLink": "false"
+                    }
+                }
+            }
+        }
+    }
+}
