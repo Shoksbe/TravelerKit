@@ -81,13 +81,13 @@ class WeatherService {
         }
 
         return WeatherInfo(
-            city: city,
-            code: code,
+            cityName: city,
+            iconCode: code,
             temp: temp,
-            text: text,
+            tempDescription: text,
             icon: icon,
-            high: high,
-            low: low
+            highestTemp: high,
+            lowestTemp: low
         )
     }
 }

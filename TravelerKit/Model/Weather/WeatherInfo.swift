@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 struct WeatherInfo {
-    let city: String
-    let code: String
+    let cityName: String
+    let iconCode: String
     let temp: String
-    let text: String
+    let tempDescription: String
     let icon: UIImage
-    let high: String
-    let low: String
+    let highestTemp: String
+    let lowestTemp: String
 }

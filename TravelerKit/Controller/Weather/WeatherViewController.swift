@@ -45,21 +45,21 @@ extension WeatherViewController {
     @objc private func setWeatherView() {
         //LocalWeatherView
         guard let localWeather = weather.local else { return }
-        localCityName.text = localWeather.city
-        localWeatherDescription.text = localWeather.text
+        localCityName.text = localWeather.cityName
+        localWeatherDescription.text = localWeather.tempDescription
         localTemp.text = localWeather.temp + "°"
         localWeatherIcon.image = localWeather.icon
-        localHighTemp.text = localWeather.high + "°"
-        localLowTemp.text = localWeather.low + "°"
+        localHighTemp.text = localWeather.highestTemp + "°"
+        localLowTemp.text = localWeather.lowestTemp + "°"
 
         //DestionWeather
         guard let destinationWeather = weather.destination else { return }
-        destinationCityName.text = destinationWeather.city
-        destinationWeatherDescription.text = destinationWeather.text
+        destinationCityName.text = destinationWeather.cityName
+        destinationWeatherDescription.text = destinationWeather.tempDescription
         destinationTemp.text = destinationWeather.temp + "°"
         destinationWeatherIcon.image = destinationWeather.icon
-        destinationHighTemp.text = destinationWeather.high + "°"
-        destinationLowTemp.text = destinationWeather.low + "°"
+        destinationHighTemp.text = destinationWeather.highestTemp + "°"
+        destinationLowTemp.text = destinationWeather.lowestTemp + "°"
     }
 
     ///Displays errors
