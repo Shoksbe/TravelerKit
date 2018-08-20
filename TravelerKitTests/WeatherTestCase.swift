@@ -91,9 +91,9 @@ class WeatherTestCase: XCTestCase {
             XCTAssertTrue(success)
             XCTAssertNotNil(weatherInfo)
 
-            let city = weatherInfo!.city
+            let city = weatherInfo!.cityName
             let temperature = weatherInfo!.temp
-            let condition = weatherInfo!.text
+            let condition = weatherInfo!.tempDescription
 
             XCTAssertEqual(city, "Brussels")
             XCTAssertEqual(temperature, "16")

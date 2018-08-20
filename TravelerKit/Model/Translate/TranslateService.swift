@@ -23,9 +23,9 @@ class TranslateService {
     
     let apiKey = valueForAPIKey(named: "API_CLIENT_GOOGLE")
     
-    func getTranslation(of text: String, callback: @escaping (Bool, Translation?)-> ()) {
+    func getTranslation(of text: String,to language: String, callback: @escaping (Bool, Translation?)-> ()) {
         
-        var urlString = "https://translation.googleapis.com/language/translate/v2?q=\(text)&target=en&key=\(apiKey)"
+        var urlString = "https://translation.googleapis.com/language/translate/v2?q=\(text)&target=\(language)&key=\(apiKey)"
         urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: urlString) else {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-// -MARK: Properties
+// MARK: - Properties
 class TranslateViewController: UIViewController {
     
     var myTranslating: TranslateBrain!
@@ -16,9 +16,17 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var toBeTranslatedTextView: UITextView!
     @IBOutlet weak var translatedTextView: UITextView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    @IBOutlet weak var targetLanguageButton: UIButton!
+    @IBOutlet weak var targetLanguageLabel: UILabel!
+
+    override func viewWillAppear(_ animated: Bool) {
+        getTranslation()
+        updateTargetLanguage()
+    }
 }
 
-// -MARK: Methods
+// MARK: - Methods
 extension TranslateViewController {
     
     override func viewDidLoad() {
@@ -56,6 +64,10 @@ extension TranslateViewController {
         //Translation of user entered text
         myTranslating.translate(toBeTranslatedTextView.text)
     }
+
+    func updateTargetLanguage() {
+        targetLanguageButton.setTitle(myTranslating.targetLanguage.name, for: .normal)
+        targetLanguageLabel.text = myTranslating.targetLanguage.name    }
     
     ///Displays errors
     @objc private func showAlertError(_ notification: Notification) {
@@ -68,7 +80,7 @@ extension TranslateViewController {
     
 }
 
-// -MARK: Textview
+// MARK: - Textview
 extension TranslateViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         //When return button did tap
@@ -79,5 +91,16 @@ extension TranslateViewController: UITextViewDelegate {
             return false
         }
         return true
+    }
+}
+
+// MARK: - Navigation
+extension TranslateViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLanguageSegue" {
+            if let destinationVC = segue.destination as? LanguageListViewController {
+                destinationVC.translateBrain = myTranslating
+            }
+        }
     }
 }

@@ -22,7 +22,8 @@ class TranslateBrain {
             NotificationCenter.default.post(name: .errorTranslate, object: nil, userInfo: ["error": error!])
         }
     }
-    
+
+    var targetLanguage: Language = Language(name: "Engels", initial: "en")
     
     // MARK: - Methods
     
@@ -31,7 +32,7 @@ class TranslateBrain {
     /// - Parameter text: The text to translate
     func translate(_ text: String) {
         //Get data from Google api
-        TranslateService.shared.getTranslation(of: text) { (success, myTranslation) in
+        TranslateService.shared.getTranslation(of: text, to: targetLanguage.initial) { (success, myTranslation) in
             if success, let translateText = myTranslation?.data.translations.first?.translatedText {
                 self.translateText = translateText
             } else {

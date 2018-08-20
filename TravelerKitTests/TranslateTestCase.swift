@@ -20,7 +20,7 @@ class TranslateTestCase: XCTestCase {
         
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change")
-        translateService.getTranslation(of: "") { (success, translation) in
+        translateService.getTranslation(of: "", to: "en") { (success, translation) in
             //Then
             XCTAssertFalse(success)
             XCTAssertNil(translation)
@@ -37,7 +37,7 @@ class TranslateTestCase: XCTestCase {
         
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translateService.getTranslation(of: "") { (success, translation) in
+        translateService.getTranslation(of: "", to: "en") { (success, translation) in
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(translation)
@@ -54,7 +54,7 @@ class TranslateTestCase: XCTestCase {
         
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translateService.getTranslation(of: "") { (success, translation) in
+        translateService.getTranslation(of: "", to: "en") { (success, translation) in
             //Then
             XCTAssertFalse(success)
             XCTAssertNil(translation)
@@ -71,7 +71,7 @@ class TranslateTestCase: XCTestCase {
         
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translateService.getTranslation(of: "") { (success, translation) in
+        translateService.getTranslation(of: "", to: "en") { (success, translation) in
             //Then
             XCTAssertFalse(success)
             XCTAssertNil(translation)
@@ -88,7 +88,7 @@ class TranslateTestCase: XCTestCase {
         
         //When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translateService.getTranslation(of: "") { (success, translation) in
+        translateService.getTranslation(of: "", to: "en") { (success, translation) in
             //Then
             XCTAssertTrue(success)
             XCTAssertNotNil(translation)
