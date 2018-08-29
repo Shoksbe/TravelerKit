@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RatesDetails: Decodable {
+struct ConversionDecodable: Decodable {
     let success: Bool
     let error: ResponseError?
     let date: String?

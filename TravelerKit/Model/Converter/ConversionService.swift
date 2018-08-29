@@ -21,7 +21,7 @@ class ConversionService {
         self.session = session
     }
 
-    func getCurrencyRates(callback: @escaping (Bool, RatesDetails?)-> ()) {
+    func getCurrencyRates(callback: @escaping (Bool, ConversionDecodable?)-> ()) {
 
         let apiKey = valueForAPIKey(named: "API_CLIENT_FIXER")
         let symbols = "USD,GBP,CAD,CHF,AUD,JPY,CNY"
@@ -44,7 +44,7 @@ class ConversionService {
 
                 do {
                     let decoder = JSONDecoder()
-                    let obj = try decoder.decode(RatesDetails.self, from: data)
+                    let obj = try decoder.decode(ConversionDecodable.self, from: data)
                     callback(true, obj)
                 }
                 catch let jsonErr {

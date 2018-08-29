@@ -9,7 +9,7 @@
 import Foundation
 
 //Structure use for parse data from api
-struct Translation: Decodable {
+struct TranslationDecodable: Decodable {
     struct Data: Decodable {
         struct Translation: Decodable {
             let translatedText: String

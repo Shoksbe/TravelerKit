@@ -344,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5c-S1-Y2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="-137"/>
+            <point key="canvasLocation" x="62" y="127"/>
         </scene>
         <!--Translate-->
         <scene sceneID="0Wy-8W-NeS">
@@ -510,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6t-P7-c6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="535"/>
+            <point key="canvasLocation" x="756" y="127"/>
         </scene>
         <!--Weather-->
         <scene sceneID="Q4m-Dg-ThC">
@@ -690,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rm-AG-jiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-618" y="926"/>
+            <point key="canvasLocation" x="1425" y="126"/>
         </scene>
         <!--Language List View Controller-->
         <scene sceneID="S1m-7F-O1F">
@@ -747,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eG-lw-uzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="1304"/>
+            <point key="canvasLocation" x="756" y="827"/>
         </scene>
     </scenes>
     <resources>

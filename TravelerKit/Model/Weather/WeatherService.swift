@@ -50,7 +50,7 @@ class WeatherService {
 
                 do {
                     let decoder = JSONDecoder()
-                    let obj = try decoder.decode(WeatherDetails.self, from: data)
+                    let obj = try decoder.decode(WeatherDecodable.self, from: data)
                     callback(true, self.getWeatherInfoFrom(obj))
                 }
                 catch let jsonErr {
@@ -62,7 +62,7 @@ class WeatherService {
         task?.resume()
     }
 
-    private func getWeatherInfoFrom(_ parsedData: WeatherDetails) -> WeatherInfo {
+    private func getWeatherInfoFrom(_ parsedData: WeatherDecodable) -> WeatherInfo {
         let weatherCondition = parsedData.query.results.channel.item.condition
         let weatherForecast = parsedData.query.results.channel.item.forecast
         let weatherLocation = parsedData.query.results.channel.location

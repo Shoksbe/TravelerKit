@@ -105,7 +105,6 @@ extension ConvertController: UICollectionViewDataSource, UICollectionViewDelegat
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        // MARK: Find a better solution to do that
         for cell in collectionView.visibleCells as! [RateCollectionViewCell] {
             if let currency = cell.rateLabel.text, currency == "USD" {
                 cell.isSelected = false

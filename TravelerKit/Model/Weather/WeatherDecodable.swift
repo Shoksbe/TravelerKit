@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherDetails: Decodable {
+struct WeatherDecodable: Decodable {
     struct Query: Decodable {
         struct Result: Decodable {
             struct Channel: Decodable {

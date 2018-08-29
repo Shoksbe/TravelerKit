@@ -23,7 +23,7 @@ class TranslateService {
     
     let apiKey = valueForAPIKey(named: "API_CLIENT_GOOGLE")
     
-    func getTranslation(of text: String,to language: String, callback: @escaping (Bool, Translation?)-> ()) {
+    func getTranslation(of text: String,to language: String, callback: @escaping (Bool, TranslationDecodable?)-> ()) {
         
         var urlString = "https://translation.googleapis.com/language/translate/v2?q=\(text)&target=\(language)&key=\(apiKey)"
         urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -45,7 +45,7 @@ class TranslateService {
                 
                 do {
                     let decoder = JSONDecoder()
-                    let obj = try decoder.decode(Translation.self, from: data)
+                    let obj = try decoder.decode(TranslationDecodable.self, from: data)
                     callback(true, obj)
                 }
                 catch let jsonErr {
