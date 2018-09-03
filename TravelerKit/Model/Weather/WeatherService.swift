@@ -74,6 +74,7 @@ class WeatherService {
         let high = weatherForecast[0].high
         let low = weatherForecast[0].low
         var icon: UIImage!
+        
         if let url = URL(string: "https://s.yimg.com/zz/combo?a/i/us/we/52/\(code).gif") {
             if let data = try? Data(contentsOf: url) {
                 icon = UIImage(data: data)!

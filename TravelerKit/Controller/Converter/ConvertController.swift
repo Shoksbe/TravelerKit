@@ -40,6 +40,7 @@ extension ConvertController {
         convertedAmountTextField.text = conversionBrain.convertedAmount
     }
 
+    ///When a error occured in json request then a alert is launched
     @objc private func showAlertError(_ notification: Notification) {
         guard let message = notification.userInfo?["error"] as? String else { return }
 
@@ -48,7 +49,7 @@ extension ConvertController {
         self.present(alert, animated: true)
     }
     
-    ///Reload the data cars they do not load at the launching of the application because of the request Json
+    ///Reload the data because they do not load at the launching of the application because of the request Json
     @objc private func reloadData() {
         collectionView.reloadData()
         collectionView.layoutIfNeeded()

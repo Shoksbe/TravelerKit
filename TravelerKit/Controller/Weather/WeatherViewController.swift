@@ -52,7 +52,7 @@ extension WeatherViewController {
         localHighTemp.text = localWeather.highestTemp + "°"
         localLowTemp.text = localWeather.lowestTemp + "°"
 
-        //DestionWeather
+        //DestinationWeather
         guard let destinationWeather = weather.destination else { return }
         destinationCityName.text = destinationWeather.cityName
         destinationWeatherDescription.text = destinationWeather.tempDescription
