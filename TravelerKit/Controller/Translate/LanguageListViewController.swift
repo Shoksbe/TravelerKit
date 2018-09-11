@@ -8,9 +8,7 @@
 
 import UIKit
 
-class LanguageListViewController: UIViewController {
-    var translateBrain: TranslateBrain!
-}
+class LanguageListViewController: UIViewController {}
 
 extension LanguageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +27,7 @@ extension LanguageListViewController: UITableViewDataSource {
 extension LanguageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //New language
-        translateBrain.targetLanguage = Language.List[indexPath.row]
+        TranslateBrain.targetLanguage = Language.List[indexPath.row]
 
         //Close the list
         self.dismiss(animated: true, completion: nil)

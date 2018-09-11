@@ -11,33 +11,6 @@ import Foundation
 class TranslateBrain {
     
     // MARK: - Properties
-    
-    private var translateText: String? {
-        didSet {
-            NotificationCenter.default.post(name: .textTranslated, object: nil, userInfo: ["text": translateText!])
-        }
-    }
-    private var error: String? {
-        didSet {
-            NotificationCenter.default.post(name: .errorTranslate, object: nil, userInfo: ["error": error!])
-        }
-    }
 
-    var targetLanguage: Language = Language(name: "Engels", initial: "en")
-    
-    // MARK: - Methods
-    
-    /// Conversion of the text given by the user by connecting the GoogleTranslate API.
-    ///
-    /// - Parameter text: The text to translate
-    func translate(_ text: String) {
-        //Get data from Google api
-        TranslateService.shared.getTranslation(of: text, to: targetLanguage.initial) { (success, myTranslation) in
-            if success, let translateText = myTranslation?.data.translations.first?.translatedText {
-                self.translateText = translateText
-            } else {
-                self.error = "Could not translate text."
-            }
-        }
-    }
+    static var targetLanguage: Language = Language(name: "Engels", initial: "en")
 }

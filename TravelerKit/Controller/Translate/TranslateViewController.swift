@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Properties
 class TranslateViewController: UIViewController {
     
-    var myTranslating: TranslateBrain!
+    var translateBrain: TranslateBrain!
     
     @IBOutlet weak var toBeTranslatedTextView: UITextView!
     @IBOutlet weak var translatedTextView: UITextView!
@@ -20,6 +20,19 @@ class TranslateViewController: UIViewController {
     @IBOutlet weak var targetLanguageButton: UIButton!
     @IBOutlet weak var targetLanguageLabel: UILabel!
 
+}
+
+// MARK: - ViewLifeCycle
+extension TranslateViewController {
+
+    //Launch one time
+    override func viewDidLoad() {
+        //Gesture to remove keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    //Launch each time when view appear
     override func viewWillAppear(_ animated: Bool) {
         getTranslation()
         updateTargetLanguage()
@@ -29,59 +42,59 @@ class TranslateViewController: UIViewController {
 // MARK: - Methods
 extension TranslateViewController {
     
-    override func viewDidLoad() {
-        //Observe notification
-        NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorTranslate, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(textTranslated(_:)), name: .textTranslated, object: nil)
-        
-        //Gesture to remove keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-        myTranslating = TranslateBrain()
+    private func getTranslation() {
+        //Show activity indicator
+        activityIndicator.isHidden = false
+
+        //Abreviation of target language
+        let targetLanguage = TranslateBrain.targetLanguage.initial
+
+        //Get data from Google api
+        TranslateService.shared.getTranslation(of: toBeTranslatedTextView.text, to: targetLanguage)
+        { (success, translatedText) in
+
+            //Hide activity indicator
+            self.activityIndicator.isHidden = true
+
+            if success, let translatedText = translatedText {
+                //Adding translated text to the translation view
+                self.translatedTextView.text = translatedText
+            } else {
+                //Show alert with error
+                self.showAlertError()
+            }
+        }
     }
-    
-    @objc func dismissKeyboard() {
+
+    private func updateTargetLanguage() {
+        //The name of the target language used
+        let targetLanguageName = TranslateBrain.targetLanguage.name
+
+        //Set the button title with target language
+        targetLanguageButton.setTitle(targetLanguageName, for: .normal)
+
+        //Set the language text label in target language textview
+        targetLanguageLabel.text = targetLanguageName
+    }
+
+    @objc private func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
         getTranslation()
     }
     
-    //When text is translated, this function is called by the NotificationObserver
-    @objc func textTranslated(_ notification: Notification) {
-        guard let translateText = notification.userInfo?["text"] as? String else { return }
-        
-        //Hide the activity indicator
-        activityIndicator.isHidden = true
-        
-        //Adding translated text to the translation view
-        translatedTextView.text = translateText
-    }
-    
-    func getTranslation() {
-        //Show activity indicator
-        activityIndicator.isHidden = false
-        //Translation of user entered text
-        myTranslating.translate(toBeTranslatedTextView.text)
-    }
-
-    func updateTargetLanguage() {
-        targetLanguageButton.setTitle(myTranslating.targetLanguage.name, for: .normal)
-        targetLanguageLabel.text = myTranslating.targetLanguage.name    }
-    
-    ///Displays errors
-    @objc private func showAlertError(_ notification: Notification) {
-        guard let message = notification.userInfo?["error"] as? String else { return }
-        
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    private func showAlertError() {
+        let alert = UIAlertController(title: "Error", message: "Could not translate text.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
     
 }
 
-// MARK: - Textview
+// MARK: - TextviewDelegate 
 extension TranslateViewController: UITextViewDelegate {
+    
+    //Dismiss keyboarg and get traduction when return button did tap
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         //When return button did tap
         if(text == "\n") {
@@ -91,16 +104,5 @@ extension TranslateViewController: UITextViewDelegate {
             return false
         }
         return true
-    }
-}
-
-// MARK: - Navigation
-extension TranslateViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLanguageSegue" {
-            if let destinationVC = segue.destination as? LanguageListViewController {
-                destinationVC.translateBrain = myTranslating
-            }
-        }
     }
 }

@@ -95,7 +95,7 @@ class TranslateTestCase: XCTestCase {
             
             let translatedText = "I translate with the Google API"
             
-            XCTAssertEqual(translatedText, translation!.data.translations.first!.translatedText)
+            XCTAssertEqual(translatedText, translation)
             expectation.fulfill()
         }
         
