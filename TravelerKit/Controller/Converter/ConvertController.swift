@@ -10,7 +10,9 @@ import UIKit
 
 class ConvertController: UIViewController {
     // MARK: - Properties
-    private var conversionBrain = ConversionBrain()
+    private var conversionBrain: ConversionBrain!
+
+    private var currencyName: [String]!
 
     // MARK: - Outlets
     @IBOutlet weak var unConvertedAmountTextField: UITextField!
@@ -25,10 +27,34 @@ extension ConvertController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Observe notification
-        NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorCurrency, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .currencyLoaded, object: nil)
+        getCurrencyRates()
+    }
 
+    private func getCurrencyRates() {
+        ConversionService.shared.getCurrencyRates { (success, request) in
+
+            //If the service call has worked and the API has returned the rates
+            if success, let rates = request?.rates {
+                self.conversionBrain = ConversionBrain(rates: rates)
+                self.currencyName = Array(self.conversionBrain.currencyRates.keys)
+                self.reloadData()
+            } else {
+
+                //Check if there is an error in the API request
+                guard let error = request?.error else {
+                    self.showAlertError(message: "Error from service")
+                    return
+                }
+
+                //Check if there is a description of the error with the error code of the API
+                guard let errorFromApiDescription = ConversionBrain.errorCodeDescription[error.code] else {
+                    self.showAlertError(message: "Unknow error")
+                    return
+                }
+
+                self.showAlertError(message: errorFromApiDescription)
+            }
+        }
     }
 
     ///Update the content of the unConvertedamount textfield
@@ -41,9 +67,7 @@ extension ConvertController {
     }
 
     ///When a error occured in json request then a alert is launched
-    @objc private func showAlertError(_ notification: Notification) {
-        guard let message = notification.userInfo?["error"] as? String else { return }
-
+    @objc private func showAlertError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
@@ -67,7 +91,7 @@ extension ConvertController {
     /// - Parameter newCurrency: the new currency to be used
     private func changeCurrency(to newCurrency: String) {
         currencyLabel.text = newCurrency
-        conversionBrain.changeTargetCurrency(to: newCurrency)
+        conversionBrain.targetCurrency = newCurrency
         updateDisplays()
     }
 }
@@ -95,12 +119,15 @@ extension ConvertController {
 extension ConvertController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return conversionBrain.ratesName.count
+        guard let currencyCount = currencyName?.count else {
+            return 0
+        }
+        return currencyCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellRate", for: indexPath) as! RateCollectionViewCell
-        cell.rateLabel.text = conversionBrain.ratesName[indexPath.row]
+        cell.rateLabel.text = currencyName[indexPath.row]
         return cell
     }
 

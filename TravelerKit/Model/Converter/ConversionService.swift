@@ -10,21 +10,23 @@ import Foundation
 
 class ConversionService {
 
+    //Singleton
     static let shared = ConversionService()
     private init() {}
 
+    //dependency injection to perform the tests
     private var task: URLSessionDataTask?
-
     private var session = URLSession(configuration: .default)
-
     init(session: URLSession) {
         self.session = session
     }
 
+    //Api informations
+    let apiKey = valueForAPIKey(named: "API_CLIENT_FIXER")
+    let symbols = "USD,GBP,CAD,CHF,AUD,JPY,CNY"
+
     func getCurrencyRates(callback: @escaping (Bool, ConversionDecodable?)-> ()) {
 
-        let apiKey = valueForAPIKey(named: "API_CLIENT_FIXER")
-        let symbols = "USD,GBP,CAD,CHF,AUD,JPY,CNY"
         let urlString = "http://data.fixer.io/api/latest?access_key=\(apiKey)&base=EUR&symbols=\(symbols)"
 
         guard let url = URL(string: urlString) else {
@@ -36,21 +38,20 @@ class ConversionService {
         task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
 
+                //Check if data, no error and httpResponseCode is ok
                 guard let data = data, error == nil,
                     let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                         callback(false, nil)
                         return
                 }
 
-                do {
-                    let decoder = JSONDecoder()
-                    let obj = try decoder.decode(ConversionDecodable.self, from: data)
-                    callback(true, obj)
-                }
-                catch let jsonErr {
-                    print("Failed to decode:", jsonErr)
+                //Decode jsonFiles
+                guard let responseJSON = try? JSONDecoder().decode(ConversionDecodable.self, from: data) else {
                     callback(false, nil)
+                    return
                 }
+
+                callback(true, responseJSON)
             }
         }
         task?.resume()

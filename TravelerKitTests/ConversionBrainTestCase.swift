@@ -14,7 +14,11 @@ class ConversionBrainTestCase: XCTestCase {
     var conversionBrain: ConversionBrain!
 
     override func setUp() {
-        conversionBrain = ConversionBrain()
+        let rates = [
+            "USD": 1.16
+        ]
+
+        conversionBrain = ConversionBrain(rates: rates)
     }
 
     // MARK: - ConversionBrain
@@ -40,6 +44,13 @@ class ConversionBrainTestCase: XCTestCase {
         conversionBrain.resetToZero()
 
         XCTAssertTrue(conversionBrain.unConvertedAmount.isEmpty)
+    }
+
+    func testGiven1TounConvertedAmountWhenAccessingToConvertedAmountThenIsNotNill() {
+        conversionBrain.addNumber("1")
+
+        XCTAssertNotNil(conversionBrain.convertedAmount)
+        XCTAssertEqual(conversionBrain.convertedAmount, "1.16")
     }
 
     // MARK: - Service
