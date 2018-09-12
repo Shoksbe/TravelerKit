@@ -60,11 +60,23 @@ extension ConvertController {
 
     ///Update the content of the unConvertedamount textfield
     private func updateDisplays() {
-        //Unconverted display
-        unConvertedAmountTextField.text = conversionBrain.unConvertedAmount
-
-        //Converted display
-        convertedAmountTextField.text = conversionBrain.convertedAmount
+        do {
+            //Try to convert amount
+            let convertedAmount = try conversionBrain.convertToTargetCurrency(conversionBrain.unConvertedAmount)
+            //Add converted amount to the converted textview
+            convertedAmountTextField.text = convertedAmount
+            //Add unconverted amount to the unconverted textview
+            unConvertedAmountTextField.text = conversionBrain.unConvertedAmount
+        } catch let error as ConversionBrain.ConvertError {
+            switch error {
+            case .currencyRatesEmpty:
+                showAlertError(message: "Unable to find the currency")
+            case .impossibleToConvertToDouble:
+                showAlertError(message: "Unable to convert the amount")
+            }
+        } catch {
+            showAlertError(message: "Unknow error")
+        }
     }
 
     ///When a error occured in json request then a alert is launched

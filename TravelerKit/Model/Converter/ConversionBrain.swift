@@ -19,10 +19,6 @@ class ConversionBrain {
      it is equal to the amount displayed in the textField of the original currency.*/
     var unConvertedAmount: String = ""
 
-    var convertedAmount: String {
-        return convertToTargetCurrency(unConvertedAmount)
-    }
-
     /// Add a number to the unConvertedAmount string
     ///
     /// - Parameter number: The *String* number to add
@@ -42,21 +38,35 @@ class ConversionBrain {
         unConvertedAmount = ""
     }
 
+    enum ConvertError: Error {
+        case currencyRatesEmpty
+        case impossibleToConvertToDouble
+    }
+
     // -MARK: Methodes
     /// Convert an amount from the source currency to the target currency
     ///
     /// - Parameter amount: The amount to convert
     /// - Returns: The converted amount in the new currency
-    func convertToTargetCurrency(_ amount: String) -> String {
+    func convertToTargetCurrency(_ amount: String) throws -> String {
 
-        guard let rate: Double = currencyRates?[targetCurrency] else { return "" }
+        //Check if the currency exist
+        guard let rate: Double = currencyRates?[targetCurrency] else {
+            throw ConvertError.currencyRatesEmpty
+        }
 
-        guard let amountToConvert: Double = Double(amount) else { return "" }
+        //Check if it is possible make a double with unconerted amount
+        guard let amountToConvert: Double = Double(amount) else {
+            throw ConvertError.impossibleToConvertToDouble
+        }
 
         //The conversion is done only if the rate exists
         var currencyConvert: Double = 0.0
 
+        //Amount converting
         currencyConvert = amountToConvert * rate
+        
+        //rounded converted amount, 2 numbers after comma
         currencyConvert = currencyConvert.rounded(toPlaces: 2)
 
         return String(currencyConvert)
