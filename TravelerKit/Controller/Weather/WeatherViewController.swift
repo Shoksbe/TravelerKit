@@ -35,16 +35,41 @@ class WeatherViewController: UIViewController {
 // MARK: - Methodes
 extension WeatherViewController {
     override func viewDidLoad() {
-        weather = WeatherBrain()
-
-        //Observe notification
-        NotificationCenter.default.addObserver(self, selector: #selector(showAlertError(_:)), name: .errorWeather, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setWeatherView), name: .weatherLoaded, object: nil)
+        getWeatherFromApi()
+    }
+    
+    private func getWeatherFromApi() {
+        
+        var local: WeatherInfo!
+        var destination: WeatherInfo!
+        
+        //recovery of local weather information
+        WeatherService.shared.getWeather(of: .brussels) { (success, weatherDetailsLocal) in
+            if success, let weatherDetailsLocal = weatherDetailsLocal {
+                local = weatherDetailsLocal
+            } else {
+                self.showAlertError(message: "Could not load local weather")
+                return
+            }
+            
+            //recovery of the destination's weather information
+            WeatherService.shared.getWeather(of: .newYork) { (success, weatherDetailsDestination) in
+                if success, let weatherDetailsDestination = weatherDetailsDestination {
+                    destination = weatherDetailsDestination
+                } else {
+                    self.showAlertError(message: "Could not load destination weather")
+                    return
+                }
+                self.weather = WeatherBrain(localWeather: local, destinationWeather: destination)
+                self.setWeatherView()
+            }
+        }
     }
 
     @objc private func setWeatherView() {
         //LocalWeatherView
-        guard let localWeather = weather.local else { return }
+        let localWeather = weather.local
+        
         localCityName.text = localWeather.cityName
         localWeatherDescription.text = localWeather.tempDescription
         localTemp.text = localWeather.temp + "°"
@@ -53,7 +78,8 @@ extension WeatherViewController {
         localLowTemp.text = localWeather.lowestTemp + "°"
 
         //DestinationWeather
-        guard let destinationWeather = weather.destination else { return }
+        let destinationWeather = weather.destination
+        
         destinationCityName.text = destinationWeather.cityName
         destinationWeatherDescription.text = destinationWeather.tempDescription
         destinationTemp.text = destinationWeather.temp + "°"
@@ -63,9 +89,7 @@ extension WeatherViewController {
     }
 
     ///Displays errors
-    @objc private func showAlertError(_ notification: Notification) {
-        guard let message = notification.userInfo?["error"] as? String else { return }
-
+    @objc private func showAlertError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
