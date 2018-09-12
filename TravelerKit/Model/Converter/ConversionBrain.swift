@@ -10,14 +10,10 @@ import Foundation
 class ConversionBrain {
 
     /// Currencies and their exchange rate
-    private(set) var currencyRates: [String: Double]
+    var currencyRates: [String: Double]?
 
     ///The target currency used to convert, by default its USD
     var targetCurrency = "USD"
-
-    init(rates: [String: Double]) {
-        self.currencyRates = rates
-    }
 
     /*This variable is used to store the amount to be converted,
      it is equal to the amount displayed in the textField of the original currency.*/
@@ -53,7 +49,7 @@ class ConversionBrain {
     /// - Returns: The converted amount in the new currency
     func convertToTargetCurrency(_ amount: String) -> String {
 
-        guard let rate: Double = currencyRates[targetCurrency] else { return "" }
+        guard let rate: Double = currencyRates?[targetCurrency] else { return "" }
 
         guard let amountToConvert: Double = Double(amount) else { return "" }
 

@@ -11,7 +11,6 @@ import UIKit
 class ConvertController: UIViewController {
     // MARK: - Properties
     private var conversionBrain: ConversionBrain!
-
     private var currencyName: [String]!
 
     // MARK: - Outlets
@@ -27,6 +26,8 @@ extension ConvertController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        conversionBrain = ConversionBrain()
+
         getCurrencyRates()
     }
 
@@ -35,8 +36,8 @@ extension ConvertController {
 
             //If the service call has worked and the API has returned the rates
             if success, let rates = request?.rates {
-                self.conversionBrain = ConversionBrain(rates: rates)
-                self.currencyName = Array(self.conversionBrain.currencyRates.keys)
+                self.conversionBrain.currencyRates = rates
+                self.currencyName = Array(self.conversionBrain.currencyRates!.keys)
                 self.reloadData()
             } else {
 
