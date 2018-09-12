@@ -11,6 +11,22 @@ import XCTest
 
 class WeatherTestCase: XCTestCase {
 
+    // MARK: - WeatherBrain
+    func testGivenInstanceWhenAccessingItThenIsExist() {
+        //Given
+        let weatherInfo = WeatherInfo(cityName: "Bruxelles",
+                                    iconCode: "1",
+                                    temp: "18",
+                                    tempDescription: "Cloudy",
+                                    icon: UIImage(),
+                                    highestTemp: "25",
+                                    lowestTemp: "12")
+        
+        let weather = WeatherBrain(localWeather: weatherInfo, destinationWeather: weatherInfo)
+        
+        XCTAssertNotNil(weather)
+    }
+    
     // MARK: - Services
     func testGetWeatherShouldPostFailed() {
         //Given
