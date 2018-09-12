@@ -11,54 +11,54 @@ import UIKit
 
 class WeatherService {
 
+    //Singleton
     static let shared = WeatherService()
     private init() {}
 
+    //dependency injection to perform the tests
     private var task: URLSessionDataTask?
-
     private var session = URLSession(configuration: .default)
-
-    private let endPoint = "https://query.yahooapis.com/v1/public/yql?q="
-
     init(session: URLSession) {
         self.session = session
     }
+    
+    //Api Url
+    private let weatherUrl = URL(string: "https://query.yahooapis.com/v1/public/yql?")!
 
+    //API call
     func getWeather(of city: Citys, callback: @escaping (Bool, WeatherInfo?)-> ()) {
 
-        //yqlQuery
-        var yqlQuery = "select * from weather.forecast where woeid=\(city.woeid()) and u='c'&format=json"
+        //Create request
+        var request = URLRequest(url: weatherUrl)
+        request.httpMethod = "POST"
+        
+        //add the body of the request
+        let body = "q=select * from weather.forecast where woeid=\(city.woeid()) and u='c'&format=json"
+        request.httpBody = body.data(using: .utf8)
 
-        yqlQuery = yqlQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-
-        //Settings URL
-        let urlString = endPoint + yqlQuery
-
-        guard let url = URL(string: urlString) else {
-            callback(false, nil)
-            return
-        }
-
+        //Stop the current task if there is one so that you do not run multiple tasks at the same time
         task?.cancel()
-        task = session.dataTask(with: url) { (data, response, error) in
+        
+        task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
+                
+                //Check if data, no error and httpResponseCode is ok
                 guard let data = data, error == nil,
                     let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                         callback(false, nil)
                         return
                 }
-
-                do {
-                    let decoder = JSONDecoder()
-                    let obj = try decoder.decode(WeatherDecodable.self, from: data)
-                    callback(true, self.getWeatherInfoFrom(obj))
+                
+                //Decode jsonFiles
+                guard let responseJSON = try? JSONDecoder().decode(WeatherDecodable.self, from: data) else {
+                        callback(false, nil)
+                        return
                 }
-                catch let jsonErr {
-                    print("Failed to decode:", jsonErr)
-                    callback(false, nil)
-                }
+                
+                callback(true, self.getWeatherInfoFrom(responseJSON))
             }
         }
+        //Launch task
         task?.resume()
     }
 
