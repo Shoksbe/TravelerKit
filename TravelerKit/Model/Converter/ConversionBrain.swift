@@ -50,6 +50,11 @@ class ConversionBrain {
     /// - Returns: The converted amount in the new currency
     func convertToTargetCurrency(_ amount: String) throws -> String {
 
+        //Prevent bug when i delete the number
+        if amount.isEmpty {
+            return ""
+        }
+
         //Check if the currency exist
         guard let rate: Double = currencyRates?[targetCurrency] else {
             throw ConvertError.currencyRatesEmpty
@@ -76,7 +81,7 @@ class ConversionBrain {
      Manual storage of all possible error codes because the API
      does not provide a description of the error each time.
      */
-    static let errorCodeDescription =
+    let errorCodeDescription =
         [404:"The requested resource does not exist.",
          101:"No API Key was specified or an invalid API Key was specified.",
          103:"The requested API endpoint does not exist.",
