@@ -39,7 +39,7 @@ extension WeatherViewController {
     }
     
     private func getWeatherFromApi() {
-        
+
         var local: WeatherInfo!
         var destination: WeatherInfo!
         

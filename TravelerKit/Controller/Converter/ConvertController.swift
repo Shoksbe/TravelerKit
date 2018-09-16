@@ -48,7 +48,7 @@ extension ConvertController {
                 }
 
                 //Check if there is a description of the error with the error code of the API
-                guard let errorFromApiDescription = ConversionBrain.errorCodeDescription[error.code] else {
+                guard let errorFromApiDescription = self.conversionBrain.errorCodeDescription[error.code] else {
                     self.showAlertError(message: "Unknow error")
                     return
                 }
