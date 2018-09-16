@@ -22,8 +22,8 @@ class ConversionService {
     }
 
     //Api informations
-    let apiKey = valueForAPIKey(named: "API_CLIENT_FIXER")
-    let symbols = "USD,GBP,CAD,CHF,AUD,JPY,CNY"
+    private let apiKey = valueForAPIKey(named: "API_CLIENT_FIXER")
+    private let symbols = "USD,GBP,CAD,CHF,AUD,JPY,CNY"
 
     func getCurrencyRates(callback: @escaping (Bool, ConversionDecodable?)-> ()) {
 
