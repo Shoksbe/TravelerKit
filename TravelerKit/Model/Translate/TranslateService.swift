@@ -33,7 +33,7 @@ class TranslateService {
         request.httpMethod = "POST"
 
         //add the body of the request
-        let body = "q=\(text)&target=\(language)&key=\(apiKey)"
+        let body = "q=\(text)&target=\(language)&key=\(apiKey)&format=text"
         request.httpBody = body.data(using: .utf8)
 
         //Stop the current task if there is one so that you do not run multiple tasks at the same time

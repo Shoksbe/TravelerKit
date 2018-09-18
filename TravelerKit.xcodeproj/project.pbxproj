@@ -27,7 +27,6 @@
 		37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5620DE24BD00BDA64A /* Main.storyboard */; };
 		37850E5A20DE24C100BDA64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5920DE24C100BDA64A /* Assets.xcassets */; };
 		37850E5D20DE24C100BDA64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37850E5B20DE24C100BDA64A /* LaunchScreen.storyboard */; };
-		37850E7920DE265E00BDA64A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37850E7820DE265E00BDA64A /* Default-568h@2x.png */; };
 		37850E7B20DFB95E00BDA64A /* ConversionBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */; };
 		37850E7D20DFB9AB00BDA64A /* ConversionBrainTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */; };
 		37850E7F20DFEA0F00BDA64A /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E7E20DFEA0F00BDA64A /* ConversionService.swift */; };
@@ -37,7 +36,6 @@
 		37850E8C20E00B0400BDA64A /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8820E00B0300BDA64A /* URLSessionFake.swift */; };
 		37850E8E20E00B0400BDA64A /* CurrencyRate.json in Resources */ = {isa = PBXBuildFile; fileRef = 37850E8A20E00B0300BDA64A /* CurrencyRate.json */; };
 		37850E8F20E00B0400BDA64A /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37850E8B20E00B0400BDA64A /* FakeResponseData.swift */; };
-		37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */; };
 		37CA2F9320E35EE10028839C /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9220E35EE10028839C /* ExtensionDouble.swift */; };
 		37CA2F9520E671B60028839C /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2F9420E671B50028839C /* RateCollectionViewCell.swift */; };
 		37DDA9AA2101D54900E81413 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDA9A92101D54900E81413 /* TranslateViewController.swift */; };
@@ -78,7 +76,6 @@
 		37850E5E20DE24C100BDA64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37850E6320DE24C100BDA64A /* TravelerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37850E6920DE24C100BDA64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37850E7820DE265E00BDA64A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		37850E7A20DFB95E00BDA64A /* ConversionBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrain.swift; sourceTree = "<group>"; };
 		37850E7C20DFB9AB00BDA64A /* ConversionBrainTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionBrainTestCase.swift; sourceTree = "<group>"; };
 		37850E7E20DFEA0F00BDA64A /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		37850E8820E00B0300BDA64A /* URLSessionFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		37850E8A20E00B0300BDA64A /* CurrencyRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencyRate.json; sourceTree = "<group>"; };
 		37850E8B20E00B0400BDA64A /* FakeResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
-		37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotificationCenter.swift; sourceTree = "<group>"; };
 		37CA2F9220E35EE10028839C /* ExtensionDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDouble.swift; sourceTree = "<group>"; };
 		37CA2F9420E671B50028839C /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		37DDA9A92101D54900E81413 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +142,6 @@
 		37850E4620DE24BC00BDA64A = {
 			isa = PBXGroup;
 			children = (
-				37850E7820DE265E00BDA64A /* Default-568h@2x.png */,
 				37850E5120DE24BD00BDA64A /* TravelerKit */,
 				37850E6620DE24C100BDA64A /* TravelerKitTests */,
 				37850E5020DE24BD00BDA64A /* Products */,
@@ -205,9 +200,9 @@
 		37850E7520DE25CE00BDA64A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37CA2F9720E6D1190028839C /* Converter */,
 				37596DB4211EC0E100974905 /* Weather */,
 				37DDA9A62101D4E100E81413 /* Translate */,
-				37CA2F9720E6D1190028839C /* Converter */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,9 +219,9 @@
 		37850E7720DE25E400BDA64A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37CA2F9620E6D0E00028839C /* Converter */,
 				37596DAB211E04E300974905 /* Weather */,
 				3711E2B021118DCE009B3246 /* Translate */,
-				37CA2F9620E6D0E00028839C /* Converter */,
 				37CA2F9920E6D1500028839C /* Extension */,
 			);
 			path = Model;
@@ -261,7 +256,6 @@
 		37CA2F9920E6D1500028839C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				37CA2F9020E35DD20028839C /* ExtensionNotificationCenter.swift */,
 				37CA2F9220E35EE10028839C /* ExtensionDouble.swift */,
 			);
 			path = Extension;
@@ -360,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37850E5D20DE24C100BDA64A /* LaunchScreen.storyboard in Resources */,
-				37850E7920DE265E00BDA64A /* Default-568h@2x.png in Resources */,
 				37850E5A20DE24C100BDA64A /* Assets.xcassets in Resources */,
 				37850E5820DE24BD00BDA64A /* Main.storyboard in Resources */,
 				37850E8720DFF7E700BDA64A /* ApiKeys.plist in Resources */,
@@ -419,7 +412,6 @@
 				37596DB3211EBDC100974905 /* Citys.swift in Sources */,
 				37850E5320DE24BD00BDA64A /* AppDelegate.swift in Sources */,
 				37596DB8211EC2BF00974905 /* WeatherBrain.swift in Sources */,
-				37CA2F9120E35DD20028839C /* ExtensionNotificationCenter.swift in Sources */,
 				37596DAD211E051300974905 /* WeatherDecodable.swift in Sources */,
 				3711E2B421118E5C009B3246 /* TranslationDecodable.swift in Sources */,
 			);

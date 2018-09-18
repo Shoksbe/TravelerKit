@@ -66,7 +66,7 @@ extension WeatherViewController {
         }
     }
 
-    @objc private func setWeatherView() {
+    private func setWeatherView() {
         //LocalWeatherView
         let localWeather = weather.local
         

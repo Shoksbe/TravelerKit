@@ -51,7 +51,7 @@ class ConversionBrain {
     func convertToTargetCurrency(_ amount: String) throws -> String {
 
         //Prevent bug when i delete the number
-        if amount.isEmpty {
+        if amount.isEmpty || amount == "." {
             return ""
         }
 

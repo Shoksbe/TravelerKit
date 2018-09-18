@@ -80,14 +80,14 @@ extension ConvertController {
     }
 
     ///When a error occured in json request then a alert is launched
-    @objc private func showAlertError(message: String) {
+    private func showAlertError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
     
     ///Reload the data because they do not load at the launching of the application because of the request Json
-    @objc private func reloadData() {
+    private func reloadData() {
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
 
