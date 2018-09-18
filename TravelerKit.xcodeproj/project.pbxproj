@@ -321,10 +321,11 @@
 				TargetAttributes = {
 					37850E4E20DE24BD00BDA64A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					37850E6220DE24C100BDA64A = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 						TestTargetID = 37850E4E20DE24BD00BDA64A;
 					};
 				};
@@ -586,7 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gregorydeknyf.TravelerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -604,7 +605,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gregorydeknyf.TravelerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -626,7 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gregorydeknyf.TravelerKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelerKit.app/TravelerKit";
 			};
@@ -648,7 +649,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gregorydeknyf.TravelerKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelerKit.app/TravelerKit";
 			};
